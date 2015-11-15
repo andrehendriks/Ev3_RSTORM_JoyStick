@@ -34,53 +34,39 @@ namespace Phone_Ev3_RSTORM_JoyStick
             brick.Disconnect();
         }
 
-        private void button_go_Click(object sender, RoutedEventArgs e)
-        {
-            BatchCommand0();
-        }
-
-        private async void BatchCommand0()
+        private async void button_go_Click(object sender, RoutedEventArgs e)
         {
             brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.B, 50, 3000, false);
             brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.C, 50, 3000, false);
             await brick.BatchCommand.SendCommandAsync();
         }
 
-        private void button_left_Click(object sender, RoutedEventArgs e)
-        {
-            BatchCommand1();
-        }
+        
 
-        private async void BatchCommand1()
+        private async void button_left_Click(object sender, RoutedEventArgs e)
         {
             brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.B, -50, 900, false);
             brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.C, 50, 900, false);
             await brick.BatchCommand.SendCommandAsync();
         }
 
-        private void button_right_Click(object sender, RoutedEventArgs e)
-        {
-            BatchCommand2();
-        }
+        
 
-        private async void BatchCommand2()
+        private async void button_right_Click(object sender, RoutedEventArgs e)
         {
             brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.B, 50, 900, false);
             brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.C, -50, 900, false);
             await brick.BatchCommand.SendCommandAsync();
         }
 
-        private void button_back_Click(object sender, RoutedEventArgs e)
-        {
-            BatchCommand3();
-        }
-
-        private async void BatchCommand3()
+        private async void button_back_Click(object sender, RoutedEventArgs e)
         {
             brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.B, -50, 3000, false);
             brick.BatchCommand.TurnMotorAtSpeedForTime(OutputPort.C, -50, 3000, false);
             await brick.BatchCommand.SendCommandAsync();
         }
+
+        
 
         
 
